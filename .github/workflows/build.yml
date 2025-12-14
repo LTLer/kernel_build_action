@@ -20,7 +20,7 @@ jobs:
           kernel-branch: lineage-23.0
           config: vendor/sm8150-perf_defconfig
           arch: arm64
-          aosp-gcc: true
+          aosp-gcc: false
           aosp-clang: true
           ksu: true
           ksu-version: main
@@ -28,3 +28,5 @@ jobs:
           aosp-clang-version: r547379
           disable-lto: true
           anykernel3: true
+          nethunter: true
+          nethunter-patch: true
