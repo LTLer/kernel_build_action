@@ -23,12 +23,12 @@ jobs:
           aosp-gcc:  true
           aosp-clang: false
           other-clang-url: 
-           https://github.com/JeyKul/clang-r547379/releases/download/clang/linux-x86-refs_heads_main-clang-r547379.tar.gz
-          ksu: true
+           https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r547379.tar.gz
           ksu-version: main
           android-version: 12
           aosp-clang-version: r547379
-          disable-lto: true
-          anykernel3: true
+          disable-lto: false
           nethunter: true
           nethunter-patch: false
+          anykernel3: true
+          
