@@ -20,11 +20,13 @@ jobs:
           kernel-branch: lineage-23.0
           config: sm8150-perf_defconfig
           arch: arm64
-          aosp-gcc:  false
-          aosp-clang: true
+          aosp-gcc:  true
+          aosp-clang: false
+          other-clang-url: 
+           https://github.com/JeyKul/clang-r547379/releases/download/clang/linux-x86-refs_heads_main-clang-r547379.tar.gz
           ksu: true
           ksu-version: main
-          android-version: 16
+          android-version: 12
           aosp-clang-version: r547379
           disable-lto: true
           anykernel3: true
