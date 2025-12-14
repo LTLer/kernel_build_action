@@ -500,11 +500,6 @@ runs:
 
         mkdir -p -v out
 
-        # ===== FIX atomic type for MSM-4.14 + Clang =====
-        echo "::group::Fix atomic64 for cred.h"
-        sed -i 's/atomic_inc_not_zero(&nonconst_cred->usage)/atomic64_inc_not_zero(&nonconst_cred->usage)/' include/linux/cred.h
-        echo "::endgroup::"
-
         if [[ -d "$HOME/clang/bin" ]]; then
             CMD_PATH="$HOME/clang/bin"
             CMD_CC="clang"
