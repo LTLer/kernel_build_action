@@ -499,13 +499,7 @@ runs:
         done
 
         mkdir -p -v out
-export PATH="$CMD_PATH:$PATH"
-make \
-    CC="$CMD_CC" \
-    CROSS_COMPILE="$CMD_CROSS_COMPILE" \
-    CROSS_COMPILE_ARM32="$CMD_CROSS_COMPILE_ARM32" \
-    CLANG_TRIPLE="$CMD_CLANG_TRIPLE" \
-   "${make_args[@]}"
+sed -i 's/atomic_inc_not_zero(&nonconst_cred->usage)/atomic64_inc_not_zero(&nonconst_cred->usage)/' include/linux/cred.h
         if [[ -d "$HOME/clang/bin" ]]; then
             CMD_PATH="$HOME/clang/bin"
             CMD_CC="clang"
