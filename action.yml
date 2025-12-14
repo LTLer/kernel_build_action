@@ -19,22 +19,22 @@ inputs:
     required: false
   kernel-dir:
     required: false
-    default: kernel
+    默认: kernel
   vendor-dir:
     required: false
-    default: vendor
+    默认: vendor
   kernel-branch:
     required: false
-    default: main
+    默认: main
   vendor-branch:
     required: false
-    default: main
+    默认: main
   config:
     required: true
-    default: defconfig
+    默认: defconfig
   arch:
     required: true
-    default: arm64
+    默认: arm64
   android-version:
     required: false
     default: ""
@@ -86,12 +86,12 @@ inputs:
     required: false
   other-gcc32-branch:
     required: false
-    default: main
+    默认: main
   other-gcc64-url:
     required: false
   other-gcc64-branch:
     required: false
-    default: main
+    默认: main
   aosp-clang:
     required: false
     default: false
@@ -102,7 +102,7 @@ inputs:
     required: false
   other-clang-branch:
     required: false
-    default: main
+    默认: main
   anykernel3:
     required: false
     default: false
@@ -499,7 +499,13 @@ runs:
         done
 
         mkdir -p -v out
-
+export PATH="$CMD_PATH:$PATH"
+make \
+    CC="$CMD_CC" \
+    CROSS_COMPILE="$CMD_CROSS_COMPILE" \
+    CROSS_COMPILE_ARM32="$CMD_CROSS_COMPILE_ARM32" \
+    CLANG_TRIPLE="$CMD_CLANG_TRIPLE" \
+   "${make_args[@]}"
         if [[ -d "$HOME/clang/bin" ]]; then
             CMD_PATH="$HOME/clang/bin"
             CMD_CC="clang"
