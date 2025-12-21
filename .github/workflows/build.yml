@@ -36,8 +36,4 @@ jobs:
           nethunter: true
           nethunter-patch: false
           anykernel3: true
-          extra-cmds: |
-             export CROSS_COMPILE_COMPAT=arm-linux-androideabi-
-             export CC=clang
-             export LLVM=1
-             export LLVM_IAS=0
+        
